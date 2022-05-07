@@ -1,0 +1,260 @@
+{"printSnippets":{
+    "PRINT":{
+       "prefix": "PR",
+       "body": "PRINT ${1:text}\t$0",
+       "description": "PRINT TEXT"
+   },
+   "PRINT ":{
+       "prefix": ["PRI", "PRINT"],
+       "body": "PRINT ${1:text}\t$0",
+       "description": "PRINT TEXT"
+   },
+   "PRINTL":{
+       "prefix": ["PL", "PRINTL"],
+       "body": "PRINTL ${1:text}\t$0",
+       "description": "PRINT NEWLINE"
+   },
+   "PRINTW":{
+       "prefix": ["PW", "PRINTW"],
+       "body": "PRINTW ${1:text}\t$0",
+       "description": "PRINT WAIT"
+   },
+   "PRINTC":{
+       "prefix": ["PC", "PRINTC"],
+       "body": "PRINTC ${1:text}\t$0",
+       "description": "PRINT RIGHTALIGN"
+   },
+   "PRINTLC":{
+       "prefix": ["PLC", "PRINTLC"],
+       "body": "PRINTLC ${1:text}\t$0",
+       "description": "PRINT LEFTALIGN"
+   },
+   "PRINTFORM":{
+       "prefix": ["PF", "PRINTFORM"],
+       "body": "PRINTFORM ${1:formtext}\t$0",
+       "description": "PRINT FORM"
+   },
+   "PRINTFORML":{
+       "prefix": ["PFL", "PRINTFORML"],
+       "body": "PRINTFORML ${1:formtext}\t$0",
+       "description": "PRINT FORM NEWLINE"
+   },
+   "PRINTFORMW":{
+       "prefix": ["PFW", "PRINTFORMW"],
+       "body": "PRINTFORMW ${1:formtext}\t$0",
+       "description": "PRINT FORM WAIT"
+   },
+   "PRINTFORMC":{
+       "prefix": ["PFC", "PRINTFORMC"],
+       "body": "PRINTFORMC ${1:formtext}\t$0",
+       "description": "PRINT FORM RIGHT ALIGN"
+   },
+   "PRINTFORMLC":{
+       "prefix": ["PFLC", "PRINTFORMLC"],
+       "body": "PRINTFORMLC ${1:formtext}\t$0",
+       "description": "PRINT FORM LEFT ALIGN"
+   },
+   "PRINTFORMS":{
+       "prefix": ["PFS", "PRINTFORMS"],
+       "body": "PRINTFORMS ${1:formstringtext}\t$0",
+       "description": "PRINT FORMS"
+   },
+   "PRINTFORMSL":{
+       "prefix": ["PFSL", "PRINTFORMSL"],
+       "body": "PRINTFORMSL ${1:formstringtext}\t$0",
+       "description": "PRINT FORMS NEWLINE"
+   },
+   "PRINTFORMSW":{
+       "prefix": ["PFSW", "PRINTFORMSW"],
+       "body": "PRINTFORMSW ${1:formstringtext}\t$0",
+       "description": "PRINT FORMS WAIT"
+   },
+   "PRINTDATA":{
+       "prefix": ["PD", "PRINTDATA"],
+       "body": [
+           "PRINTDATA",
+           "\tDATALIST",
+           "\t\tDATA ${1:datatext}\t$0",
+           "\tENDLIST",
+           "ENDDATA"
+       ],
+       "description": "PRINT DATA"
+   },
+   "PRINTDATAL":{
+       "prefix":["PDL", "PRINTDATAL"],
+       "body": [
+           "PRINTDATAL",
+           "\tDATALIST",
+           "\t\tDATA ${1:datatext}\t$0",
+           "\tENDLIST",
+           "ENDDATA"
+       ],
+       "description": "PRINT DATA NEWLINE"
+   },
+   "PRINTDATAW":{
+       "prefix": ["PDW", "PRINTDATAW"],
+       "body": [
+           "PRINTDATAW",
+           "\tDATALIST",
+           "\t\tDATA ${1:datatext}\t$0",
+           "\tENDLIST",
+           "ENDDATA"
+       ],
+       "description": "PRINT DATA WAIT"
+   },
+   "PRINTBUTTON":{
+       "prefix": ["PB", "PRINTBUTTON"],
+       "body": "PRINTBUTTON \"${1:buttontext}\", ${2:button value}\t",
+       "description": "PRINT BUTTON"
+   },
+   "PRINTBUTTONC":{
+       "prefix": ["PBC", "PRINTBUTTONC"],
+       "body": "PRINTBUTTONC \"${1:buttontext}\", ${2:button value}\t",
+       "description": "PRINT BUTTON RIGHT ALIGN"
+   },
+   "PRINTBUTTONLC":{
+       "prefix": ["PBLC", "PRINTBUTTONLC"],
+       "body": "PRINTBUTTONLC \"${1:buttontext}\", ${2:button value}\t",
+       "description": "PRINT BUTTON LEFT ALIGN"
+   }},
+"loopSnippets":{
+      "FOR":{
+            "prefix": "FOR",
+            "body": [
+                "FOR ${1:COUNTER}, ${2:from}, ${3:to}\t",
+                "\t\n\t${0}",
+                "NEXT"
+            ],
+            "description": "FOR Statement"
+        },
+        "REPEAT":{
+            "prefix": "REPEAT",
+            "body": [
+                "REPEAT ${1:goal}\t",
+                "\t\n\t${0}",
+                "REND"
+            ],
+            "description": "REPEAT Statement"
+        },
+        "WHILE":{
+            "prefix": "WHILE",
+            "body":[
+                "WHILE ${1:var}\t",
+                "\t\n\t${0}",
+                "WEND"
+            ],
+            "description": "WHILE Statement"
+        },
+        "DO":{
+            "prefix": "DO",
+            "body":[
+                "DO ${1:var}\t",
+                "\t\n\t${0}",
+                "LOOP"
+            ],
+            "description": "DO-LOOP Statement"
+        }
+    }
+,"labelSnippets":{
+    "FunctionLabel":{
+        "prefix": "FUNC",
+        "body": [
+            ";--------------------------------------------------",
+            ";functionName:\t",
+            ";description:",
+            ";Return: ",
+            ";--------------------------------------------------",
+            "@${1:functionName}\t"
+        ],
+        "description": "Function Label Line"
+    },
+    "GotoLabel":{
+        "prefix": "LABEL",
+        "body": "\\${1:labelName}\t",
+        "description": "Goto Label Line"
+    },
+    "Test":{
+        "prefix": "AAA",
+        "body": "AAA"
+    }
+},
+"branchSnippets": {
+    "IF": {
+        "prefix": "IF",
+        "body": [
+            "IF ${1:condition}\t",
+            "\t\n\t${0}",
+            "ENDIF"
+        ]
+    },
+    "SIF": {
+        "prefix": "SIF",
+        "body": [
+            "SIF ${1:condition}\t",
+            "\t\n\t${0}"
+        ]
+    },
+    "ELSEIF": {
+        "prefix": "ELSEIF",
+        "body": [
+            "ELSEIF ${1:condition}\t",
+            "\t\n\t${0}",
+            "ENDIF"
+        ]
+    },
+    "ELSE": {
+        "prefix": "ELSE",
+        "body": [
+            "ELSE",
+            "\t\n\t${0}"
+        ]
+    },
+    "SELECTCASE": {
+        "prefix": "SELECTCASE",
+        "body": [
+            "SELECTCASE ${1:var}\t",
+            "\tCASE ${2:x}\t",
+            "\t\t\n\t${0}",
+            "ENDSELECT"
+        ]
+    },
+    "GOTO": {
+        "prefix": "GOTO",
+        "body": "GOTO ${1:labelName}\t"
+    },
+    "GOTOFORM": {
+        "prefix": "GOTOFORM",
+        "body": "GOTOFORM ${1:labelNameExpr}\t"
+    },
+    "CALL": {
+        "prefix": "CALL",
+        "body": "CALL ${1:functionName}\t"
+    },
+    "CALLFORM": {
+        "prefix": "CALLFORM",
+        "body": "CALLFORM ${1:functionNameExpr}\t"
+    },
+    "CALLF": {
+        "prefix": "CALLF",
+        "body": "CALLF ${1:methodName}\t",
+        "desciption": "Call Method"
+    },
+    "CALLFORMF": {
+        "prefix": "CALLFORMF",
+        "body": "CALLFORMF ${1:methodNameExpr}\t",
+        "description": "Call Method with expr"
+    },
+    "JUMP": {
+        "prefix": "JUMP",
+        "body": "JUMP ${1:functionName}\t"
+    },
+    "JUMPFORM": {
+        "prefix": "JUMPFORM",
+        "body": "JUMPFORM ${1:functionNameExpr}\t"
+    }},
+    "setInterval": {
+        "prefix": "sti",
+        "body": "setInterval(() => {\n\t${2}\n}, ${0:intervalInms});",
+        "description": "Executes the given function at specified intervals in ES6 syntax"
+      }
+ }
