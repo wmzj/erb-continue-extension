@@ -1,9 +1,12 @@
 # erb README
 大多数基础内容由Erb插件的作者Riey完成，我在其插件的基础上进行了重构。
 
+这是我的第一个插件，如有不足，请告知，有空会修改
+
 Most of the basic content is completed by riey, the author of Erb plugin.
 I worked based on that plugin.
 
+This is my first plugin. Please let me know if there are any questions. 
 ## Features
 为emuera游戏所需的ERB文件提供代码高亮和代码补全
 
